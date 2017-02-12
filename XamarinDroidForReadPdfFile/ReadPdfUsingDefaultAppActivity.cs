@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
+
 using Android.Widget;
 
 namespace XamarinDroidForReadPdfFile
@@ -34,7 +30,9 @@ namespace XamarinDroidForReadPdfFile
             else
             {
                 Toast.MakeText(this, "指定的PDF檔案不存在", ToastLength.Short).Show();
+                
             }
+            Finish();
         }
 
         public async void OpenFile(string filePath)
@@ -86,7 +84,7 @@ namespace XamarinDroidForReadPdfFile
             }
             catch (Exception)
             {
-                Toast.MakeText(this, $"此手機上沒有可讀取{extension.ToUpper()}的App", ToastLength.Short).Show();
+                Toast.MakeText(this, $"此手機上沒有可讀取{extension?.ToUpper()}的App", ToastLength.Short).Show();
             }
             finally
             {

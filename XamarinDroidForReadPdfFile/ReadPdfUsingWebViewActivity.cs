@@ -46,6 +46,7 @@ namespace XamarinDroidForReadPdfFile
             else
             {
                 Toast.MakeText(this, "指定的PDF檔案不存在", ToastLength.Short).Show();
+                Finish();
             }
         }
     }
